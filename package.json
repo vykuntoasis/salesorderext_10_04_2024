@@ -1,0 +1,36 @@
+{
+  "name": "btp-s4-sales-ext",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/odata-v2": "^3.13.0",
+    "@sap/cds": "^7",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
+    "@sap/xsenv": "^5.1.0",
+    "@sap/xssec": "^3.6.1",
+    "express": "^4",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@sap-cloud-sdk/generator": "^3.13.0",
+    "@sap/cds-dk": "^7",
+    "@sap/ux-specification": "^1.120.7"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-salesorderapp": "cds watch --open salesorderapp/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-salesorderappext": "cds watch --open salesorderappext/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "OP_API_SALES_ORDER_SRV_0001": {
+        "kind": "odata-v2",
+        "model": "srv/external/OP_API_SALES_ORDER_SRV_0001"
+      }
+    }
+  }
+}
